@@ -15,7 +15,7 @@ const Banner = () => {
                         <div className='text-white  space-y-7 pl-12 w-1/2'>
                             <h1 className="text-white font-bold text-7xl">Your profesional Translation Services</h1>
                             <p className="text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia ipsa a, ratione perspiciatis distinctio est. Quis aspernatur non ratione eligendi esse dicta accusantium est ut atque nihil blanditiis, quibusdam quasi.</p>
-                            <button className="btn btn-primary mt-10">Start Translation</button>
+                            <button className="btn btn-primary mt-10">Start Education</button>
                         </div>
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
