@@ -2,11 +2,13 @@ import learn1 from '../assets/college1.jpg'
 import learn2 from '../assets/college2.jpg'
 import learn3 from '../assets/college3.jpg'
 import learn4 from '../assets/college4.jpg'
+import SectionTitle from './SectionTitle';
 
 const Banner = () => {
 
     return (
         <div>
+            <SectionTitle subHeading={'our wishes'} heading={'students is our future nations'}></SectionTitle>
             <div className="carousel w-full h-[600px]" >
                 <div id="slide1" className="carousel-item relative w-full">
 

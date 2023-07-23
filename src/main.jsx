@@ -13,6 +13,7 @@ import Colleges from './componenets/Colleges';
 import SignUp from './componenets/SignUp';
 import Login from './componenets/Login';
 import CollegeDetails from './componenets/CollegeDetails';
+import SearchCollegeDeatails from './componenets/SearchCollegeDeatails';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
       {
         path: 'collegedetails/:id',
         element: <CollegeDetails></CollegeDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+
+      },
+      {
+        path: 'searchcollegedetails/:id',
+        element: <SearchCollegeDeatails></SearchCollegeDeatails>,
         loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
 
       }
