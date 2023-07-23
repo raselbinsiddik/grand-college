@@ -12,6 +12,7 @@ import Home from './componenets/Home';
 import Colleges from './componenets/Colleges';
 import SignUp from './componenets/SignUp';
 import Login from './componenets/Login';
+import CollegeDetails from './componenets/CollegeDetails';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,12 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>
+      },
+      {
+        path: 'collegedetails/:id',
+        element: <CollegeDetails></CollegeDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+
       }
     ]
   },

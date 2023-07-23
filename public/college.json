@@ -1,6 +1,5 @@
 [
     {
-        "id":1,
         "name":"Rajuk Uttara Model College",
         "image":"https://mybangla24.com/static/img/blog/colleges-dhaka-bangladesh.webp",
         "admission_dates":"2023-08-01",
@@ -35,7 +34,7 @@
     
     },
     {
-        "id":2,
+       
         "name":"Notre Dame College Dhaka (EIIN: 108274)",
         "image":"https://ndc.edu.bd/storage/app/uploads/public/63d/b57/b62/thumb_689_1662_710_0_0_crop.jpg",
         "admission_dates":"2023-08-01",
@@ -70,7 +69,7 @@
     
     },
     {
-        "id":3,
+        
         "name":"Viqarunnisa Noon School & College (EIIN: 108357)",
         "image":"https://www.vnsc.edu.bd/frontend/vnsc/images/boys.png",
         "admission_dates":"2023-08-01",
@@ -106,7 +105,7 @@
     
     },
     {
-        "id":4,
+       
         "name":"Adamjee Cantonment College (EIIN: 107855)",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsLCQ4P4Mrx0mBD_PhKBy1DCia1AHMFsSST73p693g14RgSheVBTIxcZFxseOqgqSN8D8&usqp=CAU",
         "admission_dates":"2023-08-01",
@@ -141,7 +140,7 @@
     
     },
     {
-        "id":5,
+        
         "name":"Dhaka Residential Model College",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz6reVb0ElZILLTeF5R9urF1eSEo2zg2LwoELOVSFElA&s",
         "admission_dates":"2023-08-01",
@@ -175,7 +174,7 @@
     
     },
     {
-        "id":6,
+        
         "name":"BAF Shaheen College Dhaka",
         "image":"https://bafsd.edu.bd/files/SliderImages/1679819007.jpg",
         "admission_dates":"2023-08-01",
@@ -210,7 +209,7 @@
     
     },
     {
-        "id":7,
+        
         "name":"National Ideal College, Khilgaon Dhaka",
         "image":"https://www.nationalidealcollege.edu.bd/wp-content/uploads/elementor/thumbs/120459264_2923572857913936_7031493409415714732_o-ox039xwakgfe1gg16r6hyf118socm72inal4h9dc6o.jpg",
         "admission_dates":"2023-08-01",
@@ -244,7 +243,7 @@
     
     },
     {
-        "id":8,
+        
         "name":"Dhaka Commerce College",
         "image":"https://lh5.googleusercontent.com/p/AF1QipMajgdrJeJ99cxpvf-PE3GE5A52qHh0jvrPKbAu=w141-h141-n-k-no-nu",
         "admission_dates":"2023-08-01",
@@ -279,7 +278,7 @@
     
     },
     {
-        "id":9,
+       
         "name":"Milestone College, Uttara",
         "image":"https://www.milestonecollege.com/images/dcampus.jpg",
         "admission_dates":"2023-08-01",
@@ -314,7 +313,7 @@
     
     },
     {
-        "id":10,
+        
         "name":"Dhaka City College",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoACyJOrMAePyp4sqiVq1zHtttCH_snWd1l49mMcvAWw&s",
         "admission_dates":"2023-08-01",

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
+import { Link } from "react-router-dom";
 
 
 
@@ -8,7 +9,7 @@ const Colleges = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        fetch('college.json')
+        fetch('http://localhost:5000/colleges')
             .then(res => res.json())
             .then(data => setColleges(data));
     },[])
@@ -34,7 +35,8 @@ const Colleges = () => {
                                 2.{col.number_of_research[2]}.
                                 3.{col.number_of_research[3]}.</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
+                                
+                                <Link to={`/collegedetails/${col._id}`} className="btn btn-primary">Details</Link>
                             </div>
                         </div>
                     </div>
