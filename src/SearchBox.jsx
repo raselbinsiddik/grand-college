@@ -3,7 +3,7 @@
 const SearchBox = () => {
     return (
         <div>
-
+<h1 className="text-8xl text-white">good</h1>
             <div className="overflow-x-auto">
 
                 <div>

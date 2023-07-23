@@ -4,9 +4,9 @@ import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import SocialLogin from "../Pages/SocialLogin";
+import login from '../assets/authentication2.png';
 import { AuthContext } from "../Provider/AuthProvider";
-import login from '../assets/login.jpg';
+import SocialLogin from "./SocialLogin";
 
 
 const SignUp = () => {

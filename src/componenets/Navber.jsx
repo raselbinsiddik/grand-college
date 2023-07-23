@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-    const [user, logOut] = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
 
     const handleLogout = () => {
         logOut()
@@ -17,7 +17,6 @@ const Navbar = () => {
             <Link to="/colleges"> <li><a>Colleges</a></li></Link>
             <Link to="/mycolleges"><li><a>My Colleges</a></li></Link>
             <Link to="/admssion"><li><a>Admission</a></li></Link>
-            <Link to="/login"><li><a>Login</a></li></Link>
 
             {
                 user ? <>
@@ -30,7 +29,7 @@ const Navbar = () => {
 
         </>
     return (
-        <div className="navbar bg-black bg-opacity-30 max-w-screen-xl mx-auto text-white mb-2">
+        <div className="navbar fixed z-10 bg-black bg-opacity-30 max-w-screen-xl mx-auto text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

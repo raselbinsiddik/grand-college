@@ -1,11 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css'
 import Main from './componenets/Main';
+import './index.css';
+import AuthProvider from './Provider/AuthProvider';
+import Home from './componenets/Home';
+import Colleges from './componenets/Colleges';
+import SignUp from './componenets/SignUp';
+import Login from './componenets/Login';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +19,20 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-
+        path: '/',
+        element:<Home></Home>
+      },
+      {
+        path: 'colleges',
+        element:<Colleges></Colleges>
+    },
+      {
+        path: 'signup',
+        element:<SignUp></SignUp>
+    },
+      {
+        path: 'login',
+        element: <Login></Login>
       }
     ]
   },
@@ -21,8 +40,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className='max-w-screen-xl mx-auto'>
-      <RouterProvider router={router} />
-    </div>
+    <AuthProvider>
+      <HelmetProvider>
+        <div className='max-w-screen-xl mx-auto'>
+          <RouterProvider router={router} />
+        </div>
+      </HelmetProvider>     
+   </AuthProvider>
   </React.StrictMode>,
 )
