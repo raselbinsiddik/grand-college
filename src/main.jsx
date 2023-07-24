@@ -14,6 +14,9 @@ import SignUp from './componenets/SignUp';
 import Login from './componenets/Login';
 import CollegeDetails from './componenets/CollegeDetails';
 import SearchCollegeDeatails from './componenets/SearchCollegeDeatails';
+import Admission from './componenets/Admission';
+import AdmissionForm from './componenets/AdmissionForm';
+import MyCollege from './componenets/MyCollege';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +50,18 @@ const router = createBrowserRouter([
         element: <SearchCollegeDeatails></SearchCollegeDeatails>,
         loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
 
+      },
+      {
+        path: 'admission',
+        element:<Admission></Admission>
+      },
+      {
+        path: 'admissionform',
+        element:<AdmissionForm></AdmissionForm>
+      },
+      {
+        path: 'mycollege',
+        element:<MyCollege></MyCollege>
       }
     ]
   },

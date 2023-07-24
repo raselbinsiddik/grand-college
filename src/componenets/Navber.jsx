@@ -15,8 +15,8 @@ const Navbar = () => {
         <>
             <Link to="/"><li><a>Home</a></li></Link>
             <Link to="/colleges"> <li><a>Colleges</a></li></Link>
-            <Link to="/mycolleges"><li><a>My Colleges</a></li></Link>
-            <Link to="/admssion"><li><a>Admission</a></li></Link>
+            <Link to="/mycollege"><li><a>My Colleges</a></li></Link>
+            <Link to="/admission"><li><a>Admission</a></li></Link>
 
             {
                 user ? <>

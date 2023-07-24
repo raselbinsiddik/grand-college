@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import SectionTitle from "./componenets/SectionTitle";
 
 
 const SearchBox = () => {
@@ -38,39 +39,42 @@ const SearchBox = () => {
                 </div>
                
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {
-                    college.slice(0, 3).map(coll => <p className="mx-auto" key={coll._id}>
-                        <div className="card card-compact w-96 h-[700px] bg-base-100 shadow-xl">
-                            <figure><img className="w-96 h-72" src={coll.image} alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title text-violet-900 font-bold">{coll.name}</h2>
-                                <p className="text-xl font-bold">Rating: <Rating className="text-yellow-500"
-                                    placeholderRating={coll.rating}
-                                    readonly
-                                    emptySymbol={<FaRegStar></FaRegStar>}
-                                    placeholderSymbol={<FaStar></FaStar>}
-                                    fullSymbol={<FaStar></FaStar>}>
-                                </Rating>
-                                    <span>{coll.rating}</span>
-                                </p>
-                                <p className="font-bold"><span className="text-violet-800">Admission Date</span>: {coll.admission_dates}
-                                </p>
-                                <p className="font-bold"><span className="text-violet-800">Name Of Reaserch Works:</span> {coll.research_works.title}
-                                </p>
-                                <p className="font-bold"> <span className="text-violet-800">Reaserch Works Description:</span> {coll.research_works.abstract}</p>
+            <div>
+                <SectionTitle subHeading={'POPULAR'} heading={'top popular college in bangladesh'}></SectionTitle>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {
+                        college.slice(0, 3).map(coll => <p className="mx-auto" key={coll._id}>
+                            <div className="card card-compact w-96 h-[700px] bg-base-100 shadow-xl">
+                                <figure><img className="w-96 h-72" src={coll.image} alt="Shoes" /></figure>
+                                <div className="card-body">
+                                    <h2 className="card-title text-violet-900 font-bold">{coll.name}</h2>
+                                    <p className="text-xl font-bold">Rating: <Rating className="text-yellow-500"
+                                        placeholderRating={coll.rating}
+                                        readonly
+                                        emptySymbol={<FaRegStar></FaRegStar>}
+                                        placeholderSymbol={<FaStar></FaStar>}
+                                        fullSymbol={<FaStar></FaStar>}>
+                                    </Rating>
+                                        <span>{coll.rating}</span>
+                                    </p>
+                                    <p className="font-bold"><span className="text-violet-800">Admission Date</span>: {coll.admission_dates}
+                                    </p>
+                                    <p className="font-bold"><span className="text-violet-800">Name Of Reaserch Works:</span> {coll.research_works.title}
+                                    </p>
+                                    <p className="font-bold"> <span className="text-violet-800">Reaserch Works Description:</span> {coll.research_works.abstract}</p>
 
-                                <p className="font-bold"> <span className="text-violet-800">Events:</span> {coll.events_details.event_name} And Description: {coll.events_details.event_description}</p>
+                                    <p className="font-bold"> <span className="text-violet-800">Events:</span> {coll.events_details.event_name} And Description: {coll.events_details.event_description}</p>
 
-                                <p className="font-bold"> <span className="text-violet-800">Sports:</span> {coll.sports[0]}, {coll.sports[1]}, {coll.sports[2]}</p>
-                                <div className="card-actions justify-end">
+                                    <p className="font-bold"> <span className="text-violet-800">Sports:</span> {coll.sports[0]}, {coll.sports[1]}, {coll.sports[2]}</p>
+                                    <div className="card-actions justify-end">
 
-                                    <Link to={`/searchcollegedetails/${coll._id}`} className="btn btn-primary">Details</Link>
+                                        <Link to={`/searchcollegedetails/${coll._id}`} className="btn btn-primary">Details</Link>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </p>)
-                }
+                        </p>)
+                    }
+                </div>
            </div>
         </div>
     );

@@ -112,12 +112,12 @@
         "rating": 4.5,
         "admission_process":"In the order of the Ministry of Bangladesh, Rajuk Uttara Model College (RUMC) was founded in 1994 in April and started its functionality. It was located in Uttara Dhaka, Bangladesh. Now, it is the number one college in Bangladesh. To be a College student, you must gain requirements CGPA for Science is 5.00, Business Studies is 4.25, and Humanities is 3.90. This College started with a branch but pressure for the more students. It introduced another branch on the government's advice.",
         "events_details":{
-            "event_name": "Event 1",
+            "event_name": "Book fair",
             "event_date": "2023-09-15",
             "event_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
         },
         "research_works":{
-            "title": "Research Work 1",
+            "title": "Website Development",
             "author": "John Doe",
             "publication_date": "2022-05-01",
             "abstract": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
@@ -147,12 +147,12 @@
         "rating": 4.5,
         "admission_process":"In the order of the Ministry of Bangladesh, Rajuk Uttara Model College (RUMC) was founded in 1994 in April and started its functionality. It was located in Uttara Dhaka, Bangladesh. Now, it is the number one college in Bangladesh. To be a College student, you must gain requirements CGPA for Science is 5.00, Business Studies is 4.25, and Humanities is 3.90. This College started with a branch but pressure for the more students. It introduced another branch on the government's advice.",
         "events_details":{
-            "event_name": "Event 1",
+            "event_name": "Annual unnivarsary",
             "event_date": "2023-09-15",
             "event_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
         },
         "research_works":{
-            "title": "Research Work 1",
+            "title": "Summer camp",
             "author": "John Doe",
             "publication_date": "2022-05-01",
             "abstract": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
@@ -181,12 +181,12 @@
         "rating": 4.5,
         "admission_process":"In the order of the Ministry of Bangladesh, Rajuk Uttara Model College (RUMC) was founded in 1994 in April and started its functionality. It was located in Uttara Dhaka, Bangladesh. Now, it is the number one college in Bangladesh. To be a College student, you must gain requirements CGPA for Science is 5.00, Business Studies is 4.25, and Humanities is 3.90. This College started with a branch but pressure for the more students. It introduced another branch on the government's advice.",
         "events_details":{
-            "event_name": "Event 1",
+            "event_name": "Picnic",
             "event_date": "2023-09-15",
             "event_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
         },
         "research_works":{
-            "title": "Research Work 1",
+            "title": "Tree planting",
             "author": "John Doe",
             "publication_date": "2022-05-01",
             "abstract": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
@@ -214,14 +214,14 @@
         "image":"https://www.nationalidealcollege.edu.bd/wp-content/uploads/elementor/thumbs/120459264_2923572857913936_7031493409415714732_o-ox039xwakgfe1gg16r6hyf118socm72inal4h9dc6o.jpg",
         "admission_dates":"2023-08-01",
         "rating": 4.5,
-        "admission_process":"In the order of the Ministry of Bangladesh, Rajuk Uttara Model College (RUMC) was founded in 1994 in April and started its functionality. It was located in Uttara Dhaka, Bangladesh. Now, it is the number one college in Bangladesh. To be a College student, you must gain requirements CGPA for Science is 5.00, Business Studies is 4.25, and Humanities is 3.90. This College started with a branch but pressure for the more students. It introduced another branch on the government's advice.",
+        "admission_process":"lorem In the order of the Ministry of Bangladesh, Rajuk Uttara Model College (RUMC) was founded in 1994 in April and started its functionality. It was located in Uttara Dhaka, Bangladesh. Now, it is the number one college in Bangladesh. To be a College student, you must gain requirements CGPA for Science is 5.00, Business Studies is 4.25, and Humanities is 3.90. This College started with a branch but pressure for the more students. It introduced another branch on the government's advice.",
         "events_details":{
-            "event_name": "Event 1",
+            "event_name": "Tree planting",
             "event_date": "2023-09-15",
             "event_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
         },
         "research_works":{
-            "title": "Research Work 1",
+            "title": "",
             "author": "John Doe",
             "publication_date": "2022-05-01",
             "abstract": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu urna id sem tincidunt consectetur et non lectus."
