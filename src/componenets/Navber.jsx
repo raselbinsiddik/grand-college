@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import {  FaBookOpen, FaBookReader } from "react-icons/fa";
 
 const Navbar = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -21,15 +22,15 @@ const Navbar = () => {
             {
                 user ? <>
                     <li><button onClick={handleLogout} className="btn btn-ghost">Logout</button></li>
-                    <img className='w-10 rounded-full' src={user.photoURL} alt="" />
-                    <Link><li><a>{user?.displayName}</a></li></Link>
+                    <img className='w-10 rounded-full' src={user?.photoURL} alt="" />
+                    <Link to="/userinfo"><li><a>{user?.displayName}</a></li></Link>
                 </>
                     : <Link to="/login"><li><a>Login</a></li></Link>
             }
 
         </>
     return (
-        <div className="navbar fixed z-10 bg-black bg-opacity-30 max-w-screen-xl mx-auto text-white">
+        <div className="navbar fixed z-10 bg-green-600 bg-opacity-40 max-w-screen-xl mx-auto text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,7 +40,7 @@ const Navbar = () => {
                         {navPage}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Grand College</a>
+                <Link to="/"><a className="btn btn-ghost normal-case text-2xl font-bold text-yellow-600"><FaBookOpen className="text-white"></FaBookOpen> Grand College</a></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 ">
@@ -47,7 +48,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <a className="btn text-2xl"><FaBookReader></FaBookReader></a>
             </div>
         </div>
     );

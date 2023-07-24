@@ -1,114 +1,124 @@
 
-import React, { useContext } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import login from '../assets/authentication2.png';
+import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import SocialLogin from "./SocialLogin";
+import login from '../assets/authentication2.png'
+
 
 
 const SignUp = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
-    const password = React.useRef({});
-    password.current = watch('password', '');
+    const { register, handleSubmit, reset, formState: { errors }
+    } = useForm();
+
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
+
 
     const onSubmit = data => {
+        console.log(data)
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                const saveUser = { name: data.name, email: data.email }
 
-                fetch('https://learning-school-server.vercel.app/users', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(saveUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.insertedId) {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'your Register successfull',
-                                showConfirmButton: false,
-                                timer: 1500
+                updateUserProfile(data.name, data.photoURL)
+
+                    .then(() => {
+                        const savedUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(savedUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Your work has been saved',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate("/")
+                                }
                             })
 
-                        }
-                        navigate(from, { replace: true });
-                    });
+
+                    })
+                    .catch(error => console.log(error));
             })
+            .catch(error => console.log(error));
     }
+
 
     return (
         <div>
-            <Helmet><title>Translang | Sign up</title></Helmet>
-            <div className="hero min-h-screen bg-base-200 mx-auto">
+            <Helmet>
+                <title>Grand College | Sign Up</title>
+            </Helmet>
+            <h1 className="text-8xl text-white">good</h1>
+
+            <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Sign Up Now!</h1>
-                        <img className="w-96" src={login} alt="" />
+                        <h1 className="text-5xl font-bold">Sign Up</h1>
+                        <img src={login} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" {...register('name', { required: true })} placeholder="name" className="input input-bordered" />
-
+                                {errors.name && <p className="text-red-400">Please enter for name.</p>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">PhotoURL</span>
+                                    <span className="label-text">Photo Url</span>
                                 </label>
                                 <input type="text" {...register('photoURL', { required: true })} placeholder="photoURL" className="input input-bordered" />
-                                {errors.photoURL && <p className="text-red-400">Photo URL is required.</p>}
+                                {errors.photoURL && <p className="text-red-400">Photo url is requered.</p>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" {...register('email', { required: true })} placeholder="email" className="input input-bordered" />
-                                {errors.email && <p className="text-red-400">Please enter an email.</p>}
+                                <input type="email" {...register('email', { required: true })} name="email" placeholder="email" className="input input-bordered" />
+                                {errors.email && <p className="text-red-400">Please enter for email.</p>}
                             </div>
-
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" {...register('password', {
-                                    required: true,
-                                    minLength: 6,
-                                    pattern: /^(?=.*[a-z])^/
-                                })} name="password" placeholder="password" className="input input-bordered" />
-                                {errors.password?.type === 'minLength' && <p className="text-red-400">Password must be at least 6 characters.</p>}
-                                {errors.password?.type === 'pattern' && <p className="text-red-400">Password dont have a capital letters or special characters only small letter.</p>}
-                            </div>
-                            <div className="form-control">
+                                <input type="text" {...register('password', {
+                                    required: true, minLength: 6, maxLength: 20,
+                                    pattern: /(?=.*[a-z])(?=.*[!@#$%&*])(?=.*[0-9])(?=.*[A-Z])/
+                                })} placeholder="password" className="input input-bordered" />
+                                {errors.password?.type === 'minLength' && <p className="text-red-400">password must be 6 characters.</p>}
+                                {errors.password?.type === 'maxLength' && <p className="text-red-400">password maximum 20 characters.</p>}
+                                {errors.password?.type === 'pattern' && <p className="text-red-400">password must be one uppercase and, one lowercase and special characters.</p>}
+                                {errors.password?.type === 'requered' && <p className="text-red-400">password requered.</p>}
                                 <label className="label">
-                                    <span className="label-text">Confirm Password</span>
+                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
-                                <input type="password" name="passwordConfirm" {...register('passwordConfirm', {
-                                    required: true,
-                                    validate: value => value === password.current || 'The passwords do not match.'
-                                })} placeholder="confirm password" className="input input-bordered" />
-                                {errors.passwordConfirm && <p className="text-red-400">The passwords do not match.</p>}
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Sign Up" />
+
+                                <input className="btn btn-primary mb-2" type="submit" value="Sign Up" />
+
                             </div>
                         </form>
-                        Already have an account? Please<Link to="/login"> Login</Link>
+                        <p><small> Already hav an account? <Link to="/login"> Go to login</Link></small></p>
                         <SocialLogin></SocialLogin>
                     </div>
                 </div>

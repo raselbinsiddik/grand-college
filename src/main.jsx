@@ -17,6 +17,9 @@ import SearchCollegeDeatails from './componenets/SearchCollegeDeatails';
 import Admission from './componenets/Admission';
 import AdmissionForm from './componenets/AdmissionForm';
 import MyCollege from './componenets/MyCollege';
+import PrivateRoute from './Private/PrivateRoute';
+import NotFound from './componenets/NotFound';
+import UserInfo from './componenets/UserInfo';
 
 const router = createBrowserRouter([
   {
@@ -41,13 +44,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'collegedetails/:id',
-        element: <CollegeDetails></CollegeDetails>,
+        element: <PrivateRoute><CollegeDetails></CollegeDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
 
       },
       {
         path: 'searchcollegedetails/:id',
-        element: <SearchCollegeDeatails></SearchCollegeDeatails>,
+        element: <PrivateRoute><SearchCollegeDeatails></SearchCollegeDeatails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
 
       },
@@ -62,9 +65,17 @@ const router = createBrowserRouter([
       {
         path: 'mycollege',
         element:<MyCollege></MyCollege>
-      }
+      },
+      {
+        path: 'userinfo',
+        element:<UserInfo></UserInfo>
+     }
     ]
   },
+  {
+    path: '*',
+    element: <NotFound></NotFound>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
