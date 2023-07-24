@@ -1,12 +1,12 @@
 
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import login from '../assets/authentication2.png';
 import SocialLogin from "./SocialLogin";
-import login from '../assets/authentication2.png'
 
 
 
@@ -29,7 +29,7 @@ const SignUp = () => {
 
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://college-server-weld.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

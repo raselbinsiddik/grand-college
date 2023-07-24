@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import addmi from '../assets/authentication.gif';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
+import addmi from '../assets/authentication.gif';
 
 const AdmissionForm = () => {
     const { user } = useContext(AuthContext);
@@ -21,7 +21,7 @@ const AdmissionForm = () => {
         const userDetails = { name, email, subject, address, phone, photoUrl, birth };
         console.log(userDetails);
 
-        fetch('http://localhost:5000/admission', {
+        fetch('https://college-server-weld.vercel.app/admission', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

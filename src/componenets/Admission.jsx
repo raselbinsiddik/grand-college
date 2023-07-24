@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import SectionTitle from "./SectionTitle";
 import { Link } from "react-router-dom";
+import SectionTitle from "./SectionTitle";
 
 const Admission = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/colleges')
+        fetch('https://college-server-weld.vercel.app/colleges')
             .then(res => res.json())
             .then(data => setColleges(data));
     }, [])

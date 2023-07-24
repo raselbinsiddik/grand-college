@@ -11,7 +11,7 @@ const SearchBox = () => {
     const [college, setCollege] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/colleges?search=${search}`)
+        fetch(`https://college-server-weld.vercel.app/colleges?search=${search}`)
             .then(res => res.json())
             .then(data => setCollege(data));
     }, [search])

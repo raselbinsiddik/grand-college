@@ -5,21 +5,21 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Main from './componenets/Main';
-import './index.css';
-import AuthProvider from './Provider/AuthProvider';
-import Home from './componenets/Home';
-import Colleges from './componenets/Colleges';
-import SignUp from './componenets/SignUp';
-import Login from './componenets/Login';
-import CollegeDetails from './componenets/CollegeDetails';
-import SearchCollegeDeatails from './componenets/SearchCollegeDeatails';
 import Admission from './componenets/Admission';
 import AdmissionForm from './componenets/AdmissionForm';
+import CollegeDetails from './componenets/CollegeDetails';
+import Colleges from './componenets/Colleges';
+import Home from './componenets/Home';
+import Login from './componenets/Login';
+import Main from './componenets/Main';
 import MyCollege from './componenets/MyCollege';
-import PrivateRoute from './Private/PrivateRoute';
 import NotFound from './componenets/NotFound';
+import SearchCollegeDeatails from './componenets/SearchCollegeDeatails';
+import SignUp from './componenets/SignUp';
 import UserInfo from './componenets/UserInfo';
+import './index.css';
+import PrivateRoute from './Private/PrivateRoute';
+import AuthProvider from './Provider/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -45,13 +45,13 @@ const router = createBrowserRouter([
       {
         path: 'collegedetails/:id',
         element: <PrivateRoute><CollegeDetails></CollegeDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+        loader: ({ params }) => fetch(`https://college-server-weld.vercel.app/colleges/${params.id}`)
 
       },
       {
         path: 'searchcollegedetails/:id',
         element: <PrivateRoute><SearchCollegeDeatails></SearchCollegeDeatails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+        loader: ({ params }) => fetch(`https://college-server-weld.vercel.app/colleges/${params.id}`)
 
       },
       {

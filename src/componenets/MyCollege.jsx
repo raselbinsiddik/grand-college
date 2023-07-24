@@ -6,7 +6,7 @@ const MyCollege = () => {
     const [myCollege, setMyCollege] = useState([]);
     // const { user } = useContext(AuthContext);
 
-    const url = 'http://localhost:5000/admission'
+    const url = 'https://college-server-weld.vercel.app/admission'
 
     useEffect(() => {
         fetch(url)
